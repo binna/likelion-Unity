@@ -42,4 +42,4 @@ Thumbs.db
 *.sln.iml
 
 # Assets Store
-Assets/Resources/99_Resources/*
+Assets/Resources/99_Resources/
