@@ -41,6 +41,14 @@ Thumbs.db
 .idea/
 *.sln.iml
 
-# Assets Store
+###################################################################
+
 Assets/Resources/99_Resources/**
 Assets/Resources/05_Animations/**
+
+Assets/Resources/99_Resources/03_SolarSystem/
+Assets/Resources/99_Resources/03_SolarSystem/**
+Assets/Resources/99_Resources/04_Roulette/
+Assets/Resources/99_Resources/04_Roulette/**
+Assets/Resources/99_Resources/06_Cat/
+Assets/Resources/99_Resources/06_Cat/**
