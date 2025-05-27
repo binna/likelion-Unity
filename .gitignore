@@ -40,3 +40,6 @@ Thumbs.db
 .vscode/
 .idea/
 *.sln.iml
+
+# Assets Store
+Assets/Resources/99_Resources/
