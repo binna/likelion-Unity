@@ -42,5 +42,5 @@ Thumbs.db
 *.sln.iml
 
 # Assets Store
-Assets/Resources/99_Resources/
-Assets/Resources/05_Animations/
+Assets/Resources/99_Resources/**
+Assets/Resources/05_Animations/**
