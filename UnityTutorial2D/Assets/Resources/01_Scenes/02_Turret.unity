@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c17623ae59f0b6a48889ccbeb0404f8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6476648597782199964, guid: cc4c1e6bb8c5999419aa033bef01d23b, type: 3}
+  prefab: {fileID: 6476648597782199964, guid: de1bf0a68906ef949bf89307c925f707, type: 3}
 --- !u!4 &289210134
 Transform:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   turretHead: {fileID: 518023147}
-  bulletPrefab: {fileID: 2515423226322426891, guid: ef1b51ff1379f4e4aa82652d907a26a8, type: 3}
+  bulletPrefab: {fileID: 2515423226322426891, guid: ae1810984b40f5a4e8c74765ccfbdbd6, type: 3}
   firePos: {fileID: 242792777}
   timer: 0
   cooldownTime: 0.5
