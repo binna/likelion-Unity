@@ -3,11 +3,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private float moveSpeed = 5.0f;
-    
-    private void Start()
-    {
-        transform.position = new Vector3(0, 0, 0);
-    }
+
+    public static int coinCount;
 
     private void Update()
     {
