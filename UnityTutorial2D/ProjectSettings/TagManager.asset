@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Apple
+  - Pipe
   layers:
   - Default
   - TransparentFX

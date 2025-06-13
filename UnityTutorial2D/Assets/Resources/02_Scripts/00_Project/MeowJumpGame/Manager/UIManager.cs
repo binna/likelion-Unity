@@ -10,9 +10,12 @@ namespace Cat
         
         [SerializeField]
         private TextMeshProUGUI nameTextUI;
+        
+        [SerializeField]
+        private TextMeshProUGUI recordTextUI;
 
         [SerializeField] 
-        private GameObject palyGame;
+        private GameObject playGame;
         
         [SerializeField] 
         private GameObject introUI;
@@ -21,13 +24,24 @@ namespace Cat
         private GameObject alertUI;
         
         [SerializeField]
-        private GameObject gameOver;
-        
+        private GameObject outerUI;
+
+        [SerializeField]
+        private GameObject playUI;
+
         [SerializeField] 
         private CatController catController;
         
         [SerializeField]
-        private ColliderEvent colliderEvent;
+        private GameManager gameManager;
+        
+        void Awake()
+        {
+            playGame.SetActive(false);
+            playUI.SetActive(false);
+            introUI.SetActive(true);
+            outerUI.SetActive(false);
+        }
         
         public void OnAlertConfirmButton()
         {
@@ -42,19 +56,32 @@ namespace Cat
                 return;
             }
 
-            palyGame.SetActive(true);
+            playGame.SetActive(true);
+            playUI.SetActive(true);
             introUI.SetActive(false);
+            outerUI.SetActive(false);
             
+            gameManager.ScoreReset();
+
             nameTextUI.text = inputField.text;
             catController.CreateGame();
-            colliderEvent.CreateGame();
         }
 
         public void OnMoveLobbyButton()
         {
-            palyGame.SetActive(false);
+            playGame.SetActive(false);
+            playUI.SetActive(false);
             introUI.SetActive(true);
-            gameOver.SetActive(false);
+            outerUI.SetActive(false);
+        }
+
+        public void OuterUI(string text)
+        {
+            recordTextUI.text = text;
+            playGame.SetActive(false);
+            playUI.SetActive(false);
+            introUI.SetActive(false);
+            outerUI.SetActive(true);
         }
     }
 }
