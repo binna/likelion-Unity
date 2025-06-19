@@ -1,38 +1,41 @@
 using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace Cat
 {
-    [SerializeField]
-    private TextMeshProUGUI playTimeUI;
-    
-    [SerializeField]
-    private TextMeshProUGUI scoreUI;
-
-    private static float _timer;
-    private static int _score;
-
-    void Update()
+    public class GameManager : MonoBehaviour
     {
-        _timer += Time.deltaTime;
+        [SerializeField] 
+        private TextMeshProUGUI playTimeUI;
 
-        playTimeUI.text = $"Play Time : {_timer:F1}";
-        scoreUI.text = $"X {_score}";
-    }
+        [SerializeField] 
+        private TextMeshProUGUI scoreUI;
 
-    public static void PlusScore()
-    {
-        _score++;
-    }
-    
-    public void ScoreReset()
-    {
-        _score = 0;
-        _timer = 0f;
-    }
+        private static float _timer;
+        private static int _score;
 
-    public static string GetRecordText()
-    {
-        return $"Play Time : {_timer:F1} Sec\nChuru Given : {_score}";
+        void Update()
+        {
+            _timer += Time.deltaTime;
+
+            playTimeUI.text = $"Play Time : {_timer:F1}";
+            scoreUI.text = $"X {_score}";
+        }
+
+        public static void PlusScore()
+        {
+            _score++;
+        }
+
+        public void ScoreReset()
+        {
+            _score = 0;
+            _timer = 0f;
+        }
+
+        public static string GetRecordText()
+        {
+            return $"Play Time : {_timer:F1} Sec\nChuru Given : {_score}";
+        }
     }
 }
