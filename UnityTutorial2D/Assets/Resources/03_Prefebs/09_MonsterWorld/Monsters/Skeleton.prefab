@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2543884082969347487}
   - component: {fileID: 1703765139248589476}
   - component: {fileID: 5733257143171940078}
+  - component: {fileID: 2368616891670626271}
   m_Layer: 6
   m_Name: Skeleton
   m_TagString: Untagged
@@ -124,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec5435d62b5b8845a27f921c2e1a95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  moveSpeed: 3
 --- !u!58 &5733257143171940078
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +161,30 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.30928606, y: -0.022411764}
   m_Radius: 0.8235788
+--- !u!50 &2368616891670626271
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337519148707044661}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

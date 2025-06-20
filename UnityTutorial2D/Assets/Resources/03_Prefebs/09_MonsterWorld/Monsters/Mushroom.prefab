@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9092010521787939264}
   - component: {fileID: 1910239920361133698}
   - component: {fileID: 2605158232167107169}
+  - component: {fileID: 405348905515514746}
   m_Layer: 6
   m_Name: Mushroom
   m_TagString: Untagged
@@ -124,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959e7b52e869f4b46a3b97a4c232309f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  moveSpeed: 3
 --- !u!58 &2605158232167107169
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -162,3 +161,30 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.022411823, y: -0.15220231}
   m_Radius: 0.5842212
+--- !u!50 &405348905515514746
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899766407820787081}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

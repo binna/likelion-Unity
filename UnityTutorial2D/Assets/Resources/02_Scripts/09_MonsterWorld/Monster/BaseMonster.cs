@@ -5,16 +5,30 @@ namespace MonsterWorld
 {
     public abstract class BaseMonster : MonoBehaviour
     {
+        public struct MonsterRoute
+        {
+            public float minX;
+            public float maxX;
+            public Vector3 spawnPosition;
+        }
+        
+        private readonly MonsterRoute[] _routes =
+        {
+            new() { minX = -8, maxX = 8, spawnPosition = new Vector3(0f, -2.6f, 0f) },
+            new() { minX = 2.3f, maxX = 8f, spawnPosition = new Vector3(5f, 0f, 0f) },
+            new() { minX = -8f, maxX = 3f, spawnPosition = new Vector3(0f, 2.7f, 0f) },
+            new() { minX = -3f, maxX = 8f, spawnPosition = new Vector3(0f, 5.1f, 0f) },
+        };
+        
         private SpriteRenderer _spriteRenderer;
         private Animator _animator;
 
-        [SerializeField] 
-        protected float hp = 3f;
-
-        [SerializeField]
-        protected float moveSpeed = 3f;
+        protected float hp;
+        protected float moveSpeed;
 
         private SpawnManager _spawnManager;
+        private MonsterRoute _monsterRoute;
+        
         private int _direction = 1;
         private bool _isMoving = true;
         private bool _isTakingHit;
@@ -71,6 +85,9 @@ namespace MonsterWorld
             _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
 
+            _monsterRoute = _routes[Random.Range(0, _routes.Length)];
+            transform.position = _monsterRoute.spawnPosition;
+
             Init();
         }
 
@@ -91,11 +108,13 @@ namespace MonsterWorld
 
             transform.position += Vector3.right * _direction * moveSpeed * Time.deltaTime;
 
-            if (transform.position.x > 8f)
+            if (transform.position.x > _monsterRoute.maxX)
             {
                 SetFacingDirection(true);
+                return;
             }
-            else if (transform.position.x < -8f)
+            
+            if (transform.position.x < _monsterRoute.minX)
             {
                 SetFacingDirection(false);
             }

@@ -27,7 +27,7 @@ namespace MonsterWorld
 
         private void OnMouseDown()
         {
-            Get();
+            //Get();
         }
 
         public void Get()
@@ -37,5 +37,15 @@ namespace MonsterWorld
             
             gameObject.SetActive(false);
         }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log(">");
+            if (other.gameObject.CompareTag("Player"))
+            {
+                //Get();
+            }
+        }
+        
     }
 }

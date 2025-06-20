@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Apple
   - Pipe
+  - PlayerHair
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Item
   - Player
   - PlayerWeapon
-  - 
+  - Ground
   - 
   - 
   - 

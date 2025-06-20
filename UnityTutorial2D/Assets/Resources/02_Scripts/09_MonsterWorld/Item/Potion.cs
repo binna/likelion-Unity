@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MonsterWorld
@@ -36,6 +37,14 @@ namespace MonsterWorld
             _inventory.AddItem(this);
 
             gameObject.SetActive(false);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                Get();
+            }
         }
     }
 }
