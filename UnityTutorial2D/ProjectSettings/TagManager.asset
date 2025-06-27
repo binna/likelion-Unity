@@ -9,6 +9,7 @@ TagManager:
   - Apple
   - Pipe
   - PlayerHair
+  - Item
   layers:
   - Default
   - TransparentFX
