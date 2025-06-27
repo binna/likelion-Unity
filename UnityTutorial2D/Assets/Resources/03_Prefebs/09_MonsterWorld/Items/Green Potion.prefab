@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 714102942944598853}
   - component: {fileID: 3827081809702011023}
   - component: {fileID: 1715018021979518013}
-  - component: {fileID: 6856771918043690915}
+  - component: {fileID: -184821096219722262}
   - component: {fileID: 2515994200095271982}
   m_Layer: 7
   m_Name: Green Potion
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.36666667}
   m_Radius: 0.36666667
---- !u!50 &6856771918043690915
+--- !u!50 &-184821096219722262
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -188,5 +188,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d415a1254674f9636374812b6bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  price: 0
+  type: 2
+  price: 500

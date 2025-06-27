@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 459694710468704127}
   - component: {fileID: 6695268651089111827}
   - component: {fileID: -5709654384819107874}
-  - component: {fileID: -5915647626601736507}
-  - component: {fileID: -5214240919413738552}
+  - component: {fileID: 8397780367180443170}
+  - component: {fileID: -8170091982906013938}
   m_Layer: 7
   m_Name: Green Coin
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.3}
   m_Radius: 0.3
---- !u!50 &-5915647626601736507
+--- !u!50 &8397780367180443170
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-5214240919413738552
+--- !u!114 &-8170091982906013938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,5 +188,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9dcc6fd5ca45f19c9b1466263ff5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  price: 0
+  type: 1
+  price: 10

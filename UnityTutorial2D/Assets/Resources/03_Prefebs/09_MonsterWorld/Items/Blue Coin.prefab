@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5597373425305850676}
   - component: {fileID: 4032115032049435323}
   - component: {fileID: 1495719871289743800}
-  - component: {fileID: 7623484710622226803}
-  - component: {fileID: 3602372289372979652}
+  - component: {fileID: 2566916247334544251}
+  - component: {fileID: -2480638178321079983}
   m_Layer: 7
   m_Name: Blue Coin
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.3}
   m_Radius: 0.3
---- !u!50 &7623484710622226803
+--- !u!50 &2566916247334544251
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3602372289372979652
+--- !u!114 &-2480638178321079983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,5 +188,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9dcc6fd5ca45f19c9b1466263ff5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  price: 0
+  type: 2
+  price: 100

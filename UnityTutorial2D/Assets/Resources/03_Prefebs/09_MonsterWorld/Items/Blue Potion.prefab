@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 544396293788922850}
   - component: {fileID: 6554981311524288094}
   - component: {fileID: 7651359663384254757}
-  - component: {fileID: 8615609971709501627}
+  - component: {fileID: -3434485649318391750}
   - component: {fileID: 8258368635858312560}
   m_Layer: 7
   m_Name: Blue Potion
@@ -149,7 +149,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0.36666667}
   m_Radius: 0.36666667
---- !u!50 &8615609971709501627
+--- !u!50 &-3434485649318391750
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -188,5 +188,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82d415a1254674f9636374812b6bd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  price: 0
+  type: 1
+  price: 700
