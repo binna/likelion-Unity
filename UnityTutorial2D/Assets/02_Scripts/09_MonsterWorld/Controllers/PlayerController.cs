@@ -15,7 +15,7 @@ namespace MonsterWorld
         
         private readonly float checkRadius = 0.2f;          // 발 밑 체크 반경
         private readonly float DownDropCooldown  = 0.3f;
-        private readonly LayerMask platformLayer = 1 << 10;
+        private readonly LayerMask platformLayer = 1 << GROUND_LAYER;
         
         private Animator _animator;
         private Rigidbody2D _rigidbody;
@@ -31,8 +31,6 @@ namespace MonsterWorld
         
         private bool _hasHitMonster;
 
-        private bool _isDropping = false;
-        
         void Awake()
         {
             _animator = GetComponent<Animator>();

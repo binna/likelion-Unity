@@ -11,6 +11,9 @@ namespace Knight
             DOOR,
             NPC
         }
+        
+        [SerializeField]
+        private SoundManager _soundManager;
 
         [SerializeField] 
         private GameObject popUp;
@@ -71,6 +74,8 @@ namespace Knight
 
         IEnumerator DoorRoutine(Transform player)
         {
+            _soundManager.EventSoundPlay("Door Open");
+            
             yield return StartCoroutine(fade.Fade(3f, Color.black, true));
             
             map.SetActive(isHouse);
@@ -80,6 +85,8 @@ namespace Knight
             player.transform.position = position;
 
             isHouse = !isHouse;
+            
+            _soundManager.EventSoundPlay("Door Close");
 
             yield return new WaitForSeconds(1f);
             yield return StartCoroutine(fade.Fade(3f, Color.black, false));
