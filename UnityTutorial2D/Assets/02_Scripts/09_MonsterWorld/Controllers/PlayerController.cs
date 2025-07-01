@@ -140,7 +140,7 @@ namespace MonsterWorld
                 if (monster != null)
                 {
                     _hasHitMonster = true;
-                    StartCoroutine(monster.Hit(1));
+                    StartCoroutine(monster.Hit(1, transform.localScale));
                 }
             }
         }

@@ -48,13 +48,24 @@ namespace MonsterWorld
             _spriteRenderer.flipX = false;
         }
         
-        public IEnumerator Hit(float damage)
+        public IEnumerator Hit(float damage, Vector3 playerScale)
         {
             if (_isTakingHit)
                 yield break;
 
             _isTakingHit = true;
             _isMoving = false;
+            
+            if (playerScale.x > 0)
+            {
+                transform.position += new Vector3(0.8f, 0, 0);
+                SetFacingDirection(true);
+            }
+            else if (playerScale.x < 0)
+            {
+                transform.position +=  new Vector3(-0.8f, 0, 0);
+                SetFacingDirection(false);
+            }
 
             hp -= damage;
 
@@ -91,11 +102,6 @@ namespace MonsterWorld
             transform.position = _monsterRoute.spawnPosition;
 
             Init();
-        }
-
-        void OnMouseDown()
-        {
-            StartCoroutine(Hit(1));
         }
 
         void Update()
