@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Knight
+namespace Knight.Town
 {
     public class InteractionEvent : MonoBehaviour
     {

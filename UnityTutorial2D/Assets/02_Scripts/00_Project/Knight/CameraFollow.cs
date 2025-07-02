@@ -33,5 +33,10 @@ namespace Knight
             
             transform.position = smoothPos;
         }
+
+        public void SetMaxXBound(float x)
+        {
+            this.maxBound = new Vector2(x, this.maxBound.y);
+        }
     }
 }

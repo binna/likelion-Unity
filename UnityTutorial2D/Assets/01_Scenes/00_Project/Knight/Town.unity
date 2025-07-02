@@ -11809,8 +11809,8 @@ Transform:
   m_GameObject: {fileID: 862861236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.51, y: 8.7242, z: 0}
-  m_LocalScale: {x: 1, y: 2.231628, z: 1}
+  m_LocalPosition: {x: 19.4771, y: 8.7242, z: 0}
+  m_LocalScale: {x: 2.6437843, y: 2.231628, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1821374411}
@@ -18082,7 +18082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1372820981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18096,7 +18096,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249411851}
-  m_Father: {fileID: 7432893274053118782}
+  m_Father: {fileID: 3001734613631111161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -58070,7 +58070,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1372820981}
   m_Father: {fileID: 7432893274053118782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -58099,7 +58100,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3001734613631111161}
-  - {fileID: 1372820981}
   m_Father: {fileID: 2053559844}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

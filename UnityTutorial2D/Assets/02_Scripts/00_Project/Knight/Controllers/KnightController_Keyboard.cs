@@ -13,19 +13,37 @@ namespace Knight
         [SerializeField] 
         private float atkDamage = 3f;
         
+        private float _horizontal;
+        private float _vertical;
+        
+        private Vector2 _crouchOffset;
+        private Vector2 _crouchSize;
+        
+        private Vector2 _standOffset;
+        private Vector2 _standSize;
+        
         private Animator _animator;
         private Rigidbody2D _rigidbody;
+        private CapsuleCollider2D _collider;
 
         private Vector3 _inputDir;
         
         private bool _isGround;
         private bool _isAttack;
         private bool _isCombo;
+        private bool _isLadder;
 
         void Start()
         {
             _animator = GetComponent<Animator>();
             _rigidbody = GetComponent<Rigidbody2D>();
+            _collider = GetComponent<CapsuleCollider2D>();
+            
+            _crouchOffset = new Vector2(0.03912544f, 0.5389824f); 
+            _crouchSize = new Vector2(0.6767006f, 0.9599333f); 
+            
+            _standOffset  = new Vector2(0.03912544f, 0.7860222f);
+            _standSize  = new Vector2(0.6767006f, 1.400105f);
         }
 
         private void Update()       // 일반적인 작업
@@ -65,23 +83,62 @@ namespace Knight
             {
                 Debug.Log($"{atkDamage}로 공격");
             }
+
+            if (other.CompareTag("Ladder"))
+            {
+                Debug.Log(">>>>>>>>>>>>>>>>>>>>>");
+                _isLadder = true;
+                _rigidbody.gravityScale = 0f;
+                _rigidbody.linearVelocity = Vector2.zero;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Ladder"))
+            {
+                Debug.Log("<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+                _isLadder = false;
+                _rigidbody.gravityScale = 2f;
+                _rigidbody.linearVelocity = Vector2.zero;
+            }
         }
 
         void InputKeyboard()
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");     // 좌, 우
-            float vertical = Input.GetAxisRaw("Vertical");         // 상, 하
+            _horizontal = Input.GetAxisRaw("Horizontal");     // 좌, 우
+            _vertical = Input.GetAxisRaw("Vertical");         // 상, 하
 
-            _inputDir = new Vector3(horizontal, vertical, 0);
+            _inputDir = new Vector3(_horizontal, _vertical, 0);
             
             _animator.SetFloat("PositionX", _inputDir.x);
-            _animator.SetFloat("PositionY", _inputDir.y); 
+            _animator.SetFloat("PositionY", _inputDir.y);
+
+            if (_vertical < 0)
+            {
+                _collider.size = _crouchSize;
+                _collider.offset = _crouchOffset;
+            }
+            else
+            {
+                Debug.Log(">>>");
+                _isGround = true;
+                _collider.size = _standSize;
+                _collider.offset = _standOffset;
+            }
         }
 
         void Move()
         {
+            if (_isLadder)
+            {
+                _rigidbody.position = new Vector2(13.5f, _rigidbody.position.y);
+                _rigidbody.linearVelocityY = _inputDir.y * moveSpeed;
+            }
+            
             if (_inputDir.x != 0)
             {
+                _isLadder = false;
                 var scaleX = _inputDir.x > 0 ? 1f : -1f;
                 transform.localScale = new Vector3(scaleX, 1, 1);
                 
@@ -135,6 +192,11 @@ namespace Knight
             _isAttack = false;
             _isCombo = false;
             _animator.SetBool("isCombo", false);
+        }
+
+        public float GetHorizontal()
+        {
+            return _horizontal;
         }
     }
 }
