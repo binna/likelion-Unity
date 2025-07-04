@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 
 
-namespace Knight
+namespace Knight.Town
 {
     public class TypingText : MonoBehaviour
     {

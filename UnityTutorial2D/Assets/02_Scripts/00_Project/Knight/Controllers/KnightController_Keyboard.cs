@@ -13,9 +13,6 @@ namespace Knight
         [SerializeField] 
         private float atkDamage = 3f;
         
-        private float _horizontal;
-        private float _vertical;
-        
         private Vector2 _crouchOffset;
         private Vector2 _crouchSize;
         
@@ -86,7 +83,6 @@ namespace Knight
 
             if (other.CompareTag("Ladder"))
             {
-                Debug.Log(">>>>>>>>>>>>>>>>>>>>>");
                 _isLadder = true;
                 _rigidbody.gravityScale = 0f;
                 _rigidbody.linearVelocity = Vector2.zero;
@@ -97,7 +93,6 @@ namespace Knight
         {
             if (other.CompareTag("Ladder"))
             {
-                Debug.Log("<<<<<<<<<<<<<<<<<<<<<<<<<<<");
                 _isLadder = false;
                 _rigidbody.gravityScale = 2f;
                 _rigidbody.linearVelocity = Vector2.zero;
@@ -106,22 +101,21 @@ namespace Knight
 
         void InputKeyboard()
         {
-            _horizontal = Input.GetAxisRaw("Horizontal");     // 좌, 우
-            _vertical = Input.GetAxisRaw("Vertical");         // 상, 하
+            var horizontal = Input.GetAxisRaw("Horizontal");     // 좌, 우
+            var vertical = Input.GetAxisRaw("Vertical");         // 상, 하
 
-            _inputDir = new Vector3(_horizontal, _vertical, 0);
+            _inputDir = new Vector3(horizontal, vertical, 0);
             
             _animator.SetFloat("PositionX", _inputDir.x);
             _animator.SetFloat("PositionY", _inputDir.y);
 
-            if (_vertical < 0)
+            if (vertical < 0)
             {
                 _collider.size = _crouchSize;
                 _collider.offset = _crouchOffset;
             }
             else
             {
-                Debug.Log(">>>");
                 _isGround = true;
                 _collider.size = _standSize;
                 _collider.offset = _standOffset;
@@ -192,11 +186,6 @@ namespace Knight
             _isAttack = false;
             _isCombo = false;
             _animator.SetBool("isCombo", false);
-        }
-
-        public float GetHorizontal()
-        {
-            return _horizontal;
         }
     }
 }

@@ -3,16 +3,8 @@ using UnityEngine;
 
 namespace Knight.Adventure
 {
-    public class InteractionEvent : MonoBehaviour
+    public class Cave : MonoBehaviour
     {
-        public enum Type
-        {
-            Cave
-        }
-
-        [SerializeField]
-        private Type type;
-
         [SerializeField] 
         private GameObject globalLight;
         
