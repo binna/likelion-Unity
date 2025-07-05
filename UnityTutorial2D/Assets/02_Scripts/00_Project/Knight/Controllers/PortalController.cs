@@ -18,6 +18,9 @@ namespace Knight
 
         [SerializeField]
         private Image progressBar;
+
+        [SerializeField] 
+        private int sceneIdx;
         
         void OnTriggerEnter2D(Collider2D other)
         {
@@ -43,7 +46,7 @@ namespace Knight
                 yield return null;
             }
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneIdx);
 
         }
     }

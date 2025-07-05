@@ -12,8 +12,6 @@ TagManager:
   - Item
   - Monster
   - Ladder
-  - LadderSerface
-  - LadderCenter
   layers:
   - Default
   - TransparentFX

@@ -1,9 +1,17 @@
+using Knight.Adventure;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Knight
 {
     public class KnightController_Keyboard : MonoBehaviour
     {
+        [SerializeField] 
+        private Image hpBar;
+        
+        [SerializeField] 
+        private float hp = HP;
+        
         [SerializeField] 
         private float moveSpeed = 3f;
 
@@ -12,6 +20,8 @@ namespace Knight
 
         [SerializeField] 
         private float atkDamage = 3f;
+
+        private const float HP = 100f;
         
         private Vector2 _crouchOffset;
         private Vector2 _crouchSize;
@@ -48,7 +58,6 @@ namespace Knight
             InputKeyboard();
             Jump();
             Attack();
-            //WaitCombo();
         }
 
         private void FixedUpdate()  // 물리적인 작업
@@ -78,7 +87,14 @@ namespace Knight
         {
             if (other.CompareTag("Monster"))
             {
-                Debug.Log($"{atkDamage}로 공격");
+                // TODO 몬스터 데미지
+                other.gameObject.GetComponent<MonsterCore>().TakeDamage(atkDamage);
+                other.gameObject.GetComponent<Animator>().SetTrigger("Hit");
+                
+                // TODO 방향 맞추고 튕기기(몬스터는 무조건 튕기기)
+                var scaleX = transform.localScale.x * -1;
+                other.gameObject.transform.localScale = new Vector3(scaleX, 1, 1);
+                return;
             }
 
             if (other.CompareTag("Ladder"))
@@ -116,7 +132,6 @@ namespace Knight
             }
             else
             {
-                _isGround = true;
                 _collider.size = _standSize;
                 _collider.offset = _standOffset;
             }
@@ -186,6 +201,22 @@ namespace Knight
             _isAttack = false;
             _isCombo = false;
             _animator.SetBool("isCombo", false);
+        }
+
+        public void TakeDamage(float damage)
+        {
+            hp -= damage;
+            hpBar.fillAmount = hp / HP;
+            
+            if (hp <= 0f)
+                Death();
+        }
+
+        void Death()
+        {
+            _animator.SetTrigger("Death");
+            
+            // TODO 로비로 가는 로직을 만들어야 함
         }
     }
 }
